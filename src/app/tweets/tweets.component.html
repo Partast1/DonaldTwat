@@ -1,0 +1,26 @@
+<div class="container">
+<div class="row">
+
+</div>
+  <input type="text" placeholder="search" name="search" #searchValue (keyup)="save(searchValue.value)">
+  <table>
+
+    <div id="Listitems">
+    <li  class="Listitem"*ngFor="let t of twat; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
+      <div class="beside" *ngIf="match(t.text)">
+      {{t.text}}
+      <br><br>
+      <div id="badge badge-danger">{{t.likes}}</div>
+
+      <br><br>
+      {{t.date}}
+      </div>
+    </li>
+
+    </div>
+
+
+
+  </table>
+
+</div>
